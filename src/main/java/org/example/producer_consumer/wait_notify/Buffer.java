@@ -1,9 +1,13 @@
 package org.example.producer_consumer.wait_notify;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Objects;
 
+@ToString
+@EqualsAndHashCode
 public class Buffer {
     private final List<Message> messages;
     private final int capacity;
@@ -46,27 +50,5 @@ public class Buffer {
             lock.notifyAll();
             return result;
         }
-    }
-
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        Buffer buffer = (Buffer) o;
-        return capacity == buffer.capacity && Objects.equals(messages, buffer.messages) && Objects.equals(lock, buffer.lock);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(messages, capacity, lock);
-    }
-
-    @Override
-    public String toString() {
-        return "Buffer{" +
-                "messages=" + messages +
-                ", capacity=" + capacity +
-                ", lock=" + lock +
-                '}';
     }
 }

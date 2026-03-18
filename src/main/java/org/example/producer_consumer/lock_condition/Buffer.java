@@ -1,11 +1,15 @@
 package org.example.producer_consumer.lock_condition;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
+@ToString
+@EqualsAndHashCode
 public class Buffer {
     private final ReentrantLock lock;
     private final Condition notFull;
@@ -66,26 +70,5 @@ public class Buffer {
         } finally {
             lock.unlock();
         }
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        Buffer buffer = (Buffer) o;
-        return capacity == buffer.capacity && Objects.equals(lock, buffer.lock) && Objects.equals(messages, buffer.messages);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(lock, messages, capacity);
-    }
-
-    @Override
-    public String toString() {
-        return "Buffer{" +
-                "lock=" + lock +
-                ", messages=" + messages +
-                ", capacity=" + capacity +
-                '}';
     }
 }

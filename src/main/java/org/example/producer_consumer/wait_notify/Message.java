@@ -1,8 +1,12 @@
 package org.example.producer_consumer.wait_notify;
 
-import java.util.Objects;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
 import java.util.UUID;
 
+@ToString
+@EqualsAndHashCode
 public class Message {
     private UUID uuid;
     private String content;
@@ -18,21 +22,5 @@ public class Message {
 
     public String getContent() {
         return content;
-    }
-
-    public String toString() {
-        return "Message{uuid=" + uuid + ", content='" + content + "'}";
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        Message message = (Message) o;
-        return Objects.equals(uuid, message.uuid) && Objects.equals(content, message.content);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(uuid, content);
     }
 }
