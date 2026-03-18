@@ -72,4 +72,39 @@ public class ProducerConsumerDemo {
             }
         }
     }
+
+    public static void runSempahore() {
+        System.out.println("\nSemaphore producer-consumer demo");
+
+        org.example.producer_consumer.semaphore.Buffer buffer = new org.example.producer_consumer.semaphore.Buffer(5);
+        org.example.producer_consumer.semaphore.Consumer consumer = new org.example.producer_consumer.semaphore.Consumer(buffer);
+        org.example.producer_consumer.semaphore.Producer producer1 = new org.example.producer_consumer.semaphore.Producer(buffer);
+        org.example.producer_consumer.semaphore.Producer producer2 = new org.example.producer_consumer.semaphore.Producer(buffer);
+
+        Thread consumerThread = new Thread(consumer, "Consumer");
+        consumerThread.start();
+
+        Thread firstProducerThread = new Thread(producer1, "Producer1");
+        firstProducerThread.start();
+
+        Thread secondProducerThread = new Thread(producer2, "Producer2");
+        secondProducerThread.start();
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        } finally {
+            consumerThread.interrupt();
+            firstProducerThread.interrupt();
+            secondProducerThread.interrupt();
+            try {
+                consumerThread.join();
+                firstProducerThread.join();
+                secondProducerThread.join();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
 }
