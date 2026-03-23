@@ -1,7 +1,5 @@
-package org.example.producer_consumer.lock_condition;
+package org.example.concurrency.producer_consumer.semaphore;
 
-import org.example.concurrency.producer_consumer.lock_condition.Buffer;
-import org.example.concurrency.producer_consumer.lock_condition.Message;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -68,4 +66,5 @@ class BufferTest {
             Thread.currentThread().interrupt();
         }
     }
+
 }

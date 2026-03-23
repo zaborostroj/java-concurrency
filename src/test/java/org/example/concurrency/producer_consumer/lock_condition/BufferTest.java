@@ -1,7 +1,5 @@
-package org.example.producer_consumer.wait_notify;
+package org.example.concurrency.producer_consumer.lock_condition;
 
-import org.example.concurrency.producer_consumer.wait_notify.Buffer;
-import org.example.concurrency.producer_consumer.wait_notify.Message;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.TimeUnit;
