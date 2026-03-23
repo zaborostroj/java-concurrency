@@ -1,4 +1,4 @@
-package org.example.concurrency.producer_consumer.semaphore;
+package org.example.concurrency.producer_consumer.volatile_spin_waiting;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

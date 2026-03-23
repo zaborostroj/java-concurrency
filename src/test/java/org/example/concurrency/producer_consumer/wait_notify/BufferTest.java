@@ -1,7 +1,5 @@
-package org.example.producer_consumer.semaphore;
+package org.example.concurrency.producer_consumer.wait_notify;
 
-import org.example.concurrency.producer_consumer.semaphore.Buffer;
-import org.example.concurrency.producer_consumer.semaphore.Message;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -68,5 +66,4 @@ class BufferTest {
             Thread.currentThread().interrupt();
         }
     }
-
 }

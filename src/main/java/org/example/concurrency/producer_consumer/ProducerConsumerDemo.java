@@ -111,4 +111,33 @@ public class ProducerConsumerDemo {
             }
         }
     }
+
+    public static void runVolatileSpinWaiting() {
+        System.out.println("\nRunning volatile spin-waiting demo");
+
+        org.example.concurrency.producer_consumer.volatile_spin_waiting.Buffer buffer = new org.example.concurrency.producer_consumer.volatile_spin_waiting.Buffer(5);
+        org.example.concurrency.producer_consumer.volatile_spin_waiting.Producer producer = new org.example.concurrency.producer_consumer.volatile_spin_waiting.Producer(buffer);
+        org.example.concurrency.producer_consumer.volatile_spin_waiting.Consumer consumer = new org.example.concurrency.producer_consumer.volatile_spin_waiting.Consumer(buffer);
+
+        Thread producerThread = new Thread(producer, "Producer");
+        producerThread.start();
+
+        Thread consumerThread = new Thread(consumer, "Consumer");
+        consumerThread.start();
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        } finally {
+            producerThread.interrupt();
+            consumerThread.interrupt();
+            try {
+                producerThread.join();
+                consumerThread.join();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
 }

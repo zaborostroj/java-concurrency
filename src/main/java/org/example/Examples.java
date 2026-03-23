@@ -17,5 +17,7 @@ public class Examples {
         System.out.println("\n=== Producers-consumers examples ===\n");
         ProducerConsumerDemo.runWaitNotify();
         ProducerConsumerDemo.runLockWithCondition();
+        ProducerConsumerDemo.runSempahore();
+        ProducerConsumerDemo.runVolatileSpinWaiting();
     }
 }
