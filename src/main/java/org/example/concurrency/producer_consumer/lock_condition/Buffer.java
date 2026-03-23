@@ -1,4 +1,4 @@
-package org.example.producer_consumer.lock_condition;
+package org.example.concurrency.producer_consumer.lock_condition;
 
 import lombok.EqualsAndHashCode;
 import lombok.ToString;

@@ -1,17 +1,18 @@
-package org.example.producer_consumer.semaphore;
+package org.example.concurrency.producer_consumer.wait_notify;
 
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 @ToString
 @EqualsAndHashCode
-public class Consumer implements Runnable{
+public class Consumer implements Runnable {
     private final Buffer buffer;
 
     public Consumer(Buffer buffer) {
         this.buffer = buffer;
     }
 
+    @Override
     public void run() {
         while (!Thread.currentThread().isInterrupted()) {
             try {

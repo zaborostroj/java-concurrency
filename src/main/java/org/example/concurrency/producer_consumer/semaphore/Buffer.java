@@ -1,4 +1,4 @@
-package org.example.producer_consumer.semaphore;
+package org.example.concurrency.producer_consumer.semaphore;
 
 import lombok.EqualsAndHashCode;
 import lombok.ToString;

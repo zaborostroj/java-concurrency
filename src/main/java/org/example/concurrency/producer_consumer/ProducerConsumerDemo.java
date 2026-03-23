@@ -1,13 +1,17 @@
-package org.example.producer_consumer;
+package org.example.concurrency.producer_consumer;
+
+import org.example.concurrency.producer_consumer.lock_condition.Buffer;
+import org.example.concurrency.producer_consumer.lock_condition.Consumer;
+import org.example.concurrency.producer_consumer.lock_condition.Producer;
 
 public class ProducerConsumerDemo {
     public static void runWaitNotify() {
         System.out.println("\nWait-notify producer-consumer demo");
 
-        org.example.producer_consumer.wait_notify.Buffer buffer = new org.example.producer_consumer.wait_notify.Buffer(5);
-        org.example.producer_consumer.wait_notify.Consumer consumer = new org.example.producer_consumer.wait_notify.Consumer(buffer);
-        org.example.producer_consumer.wait_notify.Producer firstProducer = new org.example.producer_consumer.wait_notify.Producer(buffer);
-        org.example.producer_consumer.wait_notify.Producer secondProducer = new org.example.producer_consumer.wait_notify.Producer(buffer);
+        org.example.concurrency.producer_consumer.wait_notify.Buffer buffer = new org.example.concurrency.producer_consumer.wait_notify.Buffer(5);
+        org.example.concurrency.producer_consumer.wait_notify.Consumer consumer = new org.example.concurrency.producer_consumer.wait_notify.Consumer(buffer);
+        org.example.concurrency.producer_consumer.wait_notify.Producer firstProducer = new org.example.concurrency.producer_consumer.wait_notify.Producer(buffer);
+        org.example.concurrency.producer_consumer.wait_notify.Producer secondProducer = new org.example.concurrency.producer_consumer.wait_notify.Producer(buffer);
 
         Thread consumerThread = new Thread(consumer, "Consumer");
         consumerThread.start();
@@ -40,10 +44,10 @@ public class ProducerConsumerDemo {
     public static void runLockWithCondition() {
         System.out.println("\nLock with condition producer-consumer demo");
 
-        org.example.producer_consumer.lock_condition.Buffer buffer = new org.example.producer_consumer.lock_condition.Buffer(5);
-        org.example.producer_consumer.lock_condition.Consumer consumer = new org.example.producer_consumer.lock_condition.Consumer(buffer);
-        org.example.producer_consumer.lock_condition.Producer producer1 = new org.example.producer_consumer.lock_condition.Producer(buffer);
-        org.example.producer_consumer.lock_condition.Producer producer2 = new org.example.producer_consumer.lock_condition.Producer(buffer);
+        Buffer buffer = new Buffer(5);
+        Consumer consumer = new Consumer(buffer);
+        Producer producer1 = new Producer(buffer);
+        Producer producer2 = new Producer(buffer);
 
         Thread consumerThread = new Thread(consumer, "Consumer");
         consumerThread.start();
@@ -76,10 +80,10 @@ public class ProducerConsumerDemo {
     public static void runSempahore() {
         System.out.println("\nSemaphore producer-consumer demo");
 
-        org.example.producer_consumer.semaphore.Buffer buffer = new org.example.producer_consumer.semaphore.Buffer(5);
-        org.example.producer_consumer.semaphore.Consumer consumer = new org.example.producer_consumer.semaphore.Consumer(buffer);
-        org.example.producer_consumer.semaphore.Producer producer1 = new org.example.producer_consumer.semaphore.Producer(buffer);
-        org.example.producer_consumer.semaphore.Producer producer2 = new org.example.producer_consumer.semaphore.Producer(buffer);
+        org.example.concurrency.producer_consumer.semaphore.Buffer buffer = new org.example.concurrency.producer_consumer.semaphore.Buffer(5);
+        org.example.concurrency.producer_consumer.semaphore.Consumer consumer = new org.example.concurrency.producer_consumer.semaphore.Consumer(buffer);
+        org.example.concurrency.producer_consumer.semaphore.Producer producer1 = new org.example.concurrency.producer_consumer.semaphore.Producer(buffer);
+        org.example.concurrency.producer_consumer.semaphore.Producer producer2 = new org.example.concurrency.producer_consumer.semaphore.Producer(buffer);
 
         Thread consumerThread = new Thread(consumer, "Consumer");
         consumerThread.start();

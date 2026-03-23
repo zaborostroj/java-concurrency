@@ -1,7 +1,7 @@
 package org.example;
 
+import org.example.concurrency.producer_consumer.ProducerConsumerDemo;
 import org.example.concurrency.singleton.SingletonsDemo;
-import org.example.producer_consumer.ProducerConsumerDemo;
 
 public class Examples {
     private Examples() {}

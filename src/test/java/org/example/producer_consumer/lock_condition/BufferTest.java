@@ -1,5 +1,7 @@
 package org.example.producer_consumer.lock_condition;
 
+import org.example.concurrency.producer_consumer.lock_condition.Buffer;
+import org.example.concurrency.producer_consumer.lock_condition.Message;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.TimeUnit;

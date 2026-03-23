@@ -1,4 +1,4 @@
-package org.example.producer_consumer.semaphore;
+package org.example.concurrency.producer_consumer.semaphore;
 
 import java.util.Objects;
 import java.util.UUID;

@@ -1,5 +1,7 @@
 package org.example.producer_consumer.semaphore;
 
+import org.example.concurrency.producer_consumer.semaphore.Buffer;
+import org.example.concurrency.producer_consumer.semaphore.Message;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.TimeUnit;

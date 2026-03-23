@@ -1,11 +1,13 @@
 package org.example.producer_consumer.wait_notify;
 
+import org.example.concurrency.producer_consumer.wait_notify.Buffer;
+import org.example.concurrency.producer_consumer.wait_notify.Message;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.TimeUnit;
 
 import static org.awaitility.Awaitility.await;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BufferTest {
     @Test
