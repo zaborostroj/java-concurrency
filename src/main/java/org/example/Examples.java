@@ -23,5 +23,6 @@ public class Examples {
 
         System.out.println("\n=== Bounded queues examples ===\n");
         BoundedQueuesDemo.circularBufferDemo();
+        BoundedQueuesDemo.reentrantLockBufferDemo();
     }
 }

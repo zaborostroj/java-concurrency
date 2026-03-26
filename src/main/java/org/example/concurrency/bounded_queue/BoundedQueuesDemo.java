@@ -1,17 +1,24 @@
 package org.example.concurrency.bounded_queue;
 
 import org.example.concurrency.bounded_queue.circular_buffer.CircularBuffer;
+import org.example.concurrency.bounded_queue.reentrant_lock_buffer.ReentrantLockBuffer;
 
 public class BoundedQueuesDemo {
     public static void circularBufferDemo() {
-        BoundedQueueBuffer buffer = new CircularBuffer(10);
+        runProducerAndConsumer(new CircularBuffer(10), "CircularBuffer");
+    }
 
+    public static void reentrantLockBufferDemo() {
+        runProducerAndConsumer(new ReentrantLockBuffer(10), "ReentrantLockBuffer");
+    }
+
+    private static void runProducerAndConsumer(BoundedQueueBuffer buffer, String threadNamePrefix) {
         BoundedQueueProducer producer = new BoundedQueueProducer(buffer);
-        Thread producerThread = new Thread(producer);
+        Thread producerThread = new Thread(producer, threadNamePrefix + "_producer");
         producerThread.start();
 
         BoundedQueueConsumer consumer = new BoundedQueueConsumer(buffer);
-        Thread consumerThread = new Thread(consumer);
+        Thread consumerThread = new Thread(consumer, threadNamePrefix + "_consumer");
         consumerThread.start();
 
         try {

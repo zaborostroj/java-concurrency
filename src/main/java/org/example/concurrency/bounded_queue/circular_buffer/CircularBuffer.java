@@ -3,7 +3,7 @@ package org.example.concurrency.bounded_queue.circular_buffer;
 import org.example.concurrency.bounded_queue.BoundedQueueBuffer;
 
 public class CircularBuffer implements BoundedQueueBuffer {
-    private Object[] items;
+    private final Object[] items;
     private int head;
     private int tail;
     private int count;
@@ -25,6 +25,7 @@ public class CircularBuffer implements BoundedQueueBuffer {
         synchronized (this) {
             while (count == capacity) {
                 try {
+                    System.out.println("Producer " + Thread.currentThread().getName() + " is waiting");
                     wait();
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
@@ -36,6 +37,7 @@ public class CircularBuffer implements BoundedQueueBuffer {
             tail = (tail + 1) % capacity;
             count++;
             notifyAll();
+            System.out.println("Producer " + Thread.currentThread().getName() + " added item to the queue " + item);
         }
     }
 
@@ -44,6 +46,7 @@ public class CircularBuffer implements BoundedQueueBuffer {
         synchronized (this) {
             while (count == 0) {
                 try {
+                    System.out.println("Consumer " + Thread.currentThread().getName() + " is waiting");
                     wait();
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
@@ -55,6 +58,7 @@ public class CircularBuffer implements BoundedQueueBuffer {
             head = (head + 1) % capacity;
             count--;
             notifyAll();
+            System.out.println("Consumer " + Thread.currentThread().getName() + " consumed item from the queue " + result);
             return result;
         }
     }
