@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.concurrency.bounded_queue.BoundedQueuesDemo;
 import org.example.concurrency.producer_consumer.ProducerConsumerDemo;
 import org.example.concurrency.singleton.SingletonsDemo;
 
@@ -19,5 +20,8 @@ public class Examples {
         ProducerConsumerDemo.runLockWithCondition();
         ProducerConsumerDemo.runSempahore();
         ProducerConsumerDemo.runVolatileSpinWaiting();
+
+        System.out.println("\n=== Bounded queues examples ===\n");
+        BoundedQueuesDemo.circularBufferDemo();
     }
 }
