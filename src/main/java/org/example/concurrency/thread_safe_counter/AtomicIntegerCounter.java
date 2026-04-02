@@ -3,7 +3,7 @@ package org.example.concurrency.thread_safe_counter;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class AtomicIntegerCounter {
-    private AtomicInteger value;
+    private final AtomicInteger value;
 
     public AtomicIntegerCounter(int initialValue) {
         this.value = new AtomicInteger(initialValue);
