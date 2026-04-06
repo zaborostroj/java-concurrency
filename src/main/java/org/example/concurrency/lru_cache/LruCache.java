@@ -100,6 +100,18 @@ public class LruCache<K, V> {
         }
     }
 
+    public int getSize() {
+        try {
+            mutex.lockInterruptibly();
+            return size;
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            return -1;
+        } finally {
+            mutex.unlock();
+        }
+    }
+
     private void insertAfterHead(Node<K, V> nodeToMove) {
         (head.next).prev = nodeToMove;
         nodeToMove.next = head.next;
