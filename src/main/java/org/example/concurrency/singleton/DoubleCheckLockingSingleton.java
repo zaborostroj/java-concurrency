@@ -2,7 +2,7 @@ package org.example.concurrency.singleton;
 
 public class DoubleCheckLockingSingleton {
     /**
-     * Without volatile, you risk encountering the instruction reordering problem by the compiler or processor.
+     * Without a volatile, you risk encountering the instruction reordering problem by the compiler or processor.
      * The process of creating an object new DoubleCheckLockingSingleton() consists of three steps:
      * Memory allocation.
      * Object initialization (constructor call).
