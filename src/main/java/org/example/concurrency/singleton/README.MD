@@ -138,3 +138,7 @@ ClassLoader гарантирует atomic initialization
 | DCL + volatile | +    | +++  | +++        |
 | Holder class   | +    | ++++ | ++         |
 | Enum           | -    | ++++ | +          |
+
+---
+
+[Назад к списку вопросов](../QUESTIONS.MD)
