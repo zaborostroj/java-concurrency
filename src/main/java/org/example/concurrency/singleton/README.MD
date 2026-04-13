@@ -141,4 +141,4 @@ ClassLoader гарантирует atomic initialization
 
 ---
 
-[Назад к списку вопросов](../QUESTIONS.MD)
+[Назад к оглавлению](../../../../../../../README.MD)
