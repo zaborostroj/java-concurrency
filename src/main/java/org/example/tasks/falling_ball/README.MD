@@ -1,5 +1,7 @@
 # Задача: Мячик на лесенке
 
+https://coderun.yandex.ru/selections/algorithm-training-september-2025/problems/ball-on-the-stairs
+
 ## Описание задачи
 
 На вершине лесенки, содержащей N ступенек, находится мячик, который начинает прыгать по ним вниз, к основанию. Мячик
