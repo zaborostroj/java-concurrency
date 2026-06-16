@@ -7,5 +7,7 @@
 
     <include file="v1/001-basic-sql-query-tables.sql" relativeToChangelogFile="true"/>
     <include file="v1/002-basic-sql-query-data.sql" relativeToChangelogFile="true"/>
+    <include file="v1/003-join-group-subquery-tables.sql" relativeToChangelogFile="true"/>
+    <include file="v1/004-join-group-subquery-data.sql" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
