@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.27.xsd">
+
+    <include file="v1/001-basic-sql-query-tables.sql" relativeToChangelogFile="true"/>
+    <include file="v1/002-basic-sql-query-data.sql" relativeToChangelogFile="true"/>
+    <include file="v1/003-join-group-subquery-tables.sql" relativeToChangelogFile="true"/>
+    <include file="v1/004-join-group-subquery-data.sql" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>
