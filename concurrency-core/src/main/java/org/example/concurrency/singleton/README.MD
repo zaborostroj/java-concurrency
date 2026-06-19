@@ -141,4 +141,4 @@ ClassLoader гарантирует atomic initialization
 
 ---
 
-[Назад к оглавлению](../../../../../../../README.MD)
+[Назад к оглавлению](../README.MD)
