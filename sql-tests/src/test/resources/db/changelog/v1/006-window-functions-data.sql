@@ -1,4 +1,4 @@
-INSERT INTO employees VALUES
+INSERT INTO clients VALUES
     (1, 'Ivan', 'IT', 5000),
     (2, 'Petr', 'IT', 6500),
     (3, 'Anna', 'IT', 6500),
@@ -7,7 +7,7 @@ INSERT INTO employees VALUES
     (6, 'John', 'Sales', 7000),
     (7, 'Kate', 'Sales', 6000);
 
-INSERT INTO orders VALUES
+INSERT INTO client_orders VALUES
     (1, 1, '2025-01-01', 100),
     (2, 1, '2025-01-05', 200),
     (3, 1, '2025-01-10', 300),
