@@ -13,6 +13,7 @@
         <module>concurrency-core</module>
         <module>coding-tasks</module>
         <module>sql-tests</module>
+        <module>spring-questions</module>
     </modules>
 
     <properties>
